@@ -1,0 +1,221 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'S-Core Dream';
+    src: url('font/에스코어드림/S-CoreDream-5Medium.eot');
+    src: url('font/에스코어드림/S-CoreDream-5Medium.eot?#iefix') format('embedded-opentype'),
+        url('font/에스코어드림/S-CoreDream-5Medium.woff2') format('woff2'),
+        url('font/에스코어드림/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body { 
+    color: #333;
+    font-family: 'S-Core Dream';
+    font-weight: 500;
+}
+
+.header {
+    width: 1280px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 메뉴들 박스 가운데로 이동 */
+    margin: 0 auto;
+}
+.header nav ul li{
+    display: inline-block;
+    margin: 0 20px;
+}
+.header .util ul {
+    display: flex;
+}
+.header .util ul li {
+    margin-left: 20px;
+}
+.header .util ul li:first-child {
+    margin-left: 0;
+}
+
+/* ✅ 메인비주얼✅ ------------------------- */
+
+.main_visual {
+    /* height: 960px; */
+    height: 100vh;
+    /* vh 브라우저 높이에 대응되는 값     
+    100vh ==> 100%
+    50vh ==>50%, 50vh 브라우저의 반만 */
+}
+.main_visual {
+    height: 100%;
+    position: relative;
+}
+.main_visual figure img {
+    width: 100%;
+    height: 100%; /* 부모한테 height 값이 없으면 적용이 안됨 */
+    object-fit: cover;
+    display: block;
+}
+
+.main_visual div {
+    width: 1280px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    /* top,left 50% 값을 줘서 relative가 가진 넓이로 가게되니깐
+    div가 가진 값으로 보내고싶을때 transform사용 */
+    /* ❗자주 사용되는 공식이기에 중요 - 외워~❗ */
+    color: white;
+
+}
+.main_visual div h2 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.main_visual div a {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    background-color: rgb(255, 166, 0);
+    color: rgb(255, 255, 255);
+    display: block;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* ✅✅.section01 ---------------------- */
+.section01 {
+    background: url('../img/backgraund02.jpg') center center / cover;
+    /* html이랑 css랑 이미지 불러오는 경로가 다름 */
+    padding: 150px 0; 
+}
+.section01 .inner {
+    width: 1280px;
+    margin: 0 auto;
+}
+.section01 .inner h3 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: white;
+}
+.section01 .inner .list {
+    display: flex; /* 정해진 공간에 정확하게 배치할 떄 사용 */
+    justify-content: space-between;
+}
+.section01 .inner .list .item {
+    width: 410px;
+    /* background-color: white; */
+    position:relative;
+    overflow: hidden;
+}
+.section01 .inner .list .item figure {
+    height: 400px;
+}
+.section01 .inner .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.section01 .inner .list .item div {
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    transform: translateY(100%);
+    transition: transform 1s;
+    /* all 말고 다른 값도 줄수있음 transition: transform으로 주면
+    잔상같은거 안나타남 */
+}
+.section01 .inner .list .item:hover {
+    transform: scale(1.1);
+    transition: all 1s;
+}
+.section01 .inner .list .item:hover div{
+    transform: translateY(0);
+}
+
+
+/* ✅✅.section02 ---------------------- */
+
+.section02 {
+    margin: 150px 0;
+    text-align: center; /* 부모한테 쓰면 전체적으로(이미지포함) 가운데 정렬됨 */
+}
+.section02 h3 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.section02 .list .item {
+    width: 250px;
+    height: 250px;
+    background-color:rgb(89, 150, 89);
+    border-radius: 50%;
+    font-size: 25px;
+    color: white;
+    line-height: 250px;
+
+    display: inline-block; /* 아이템들끼리 가로로 나열 */
+    margin: 0 10px;
+}
+
+
+/* ✅✅.footer ---------------------- */
+.footer {
+    background-color: #333;
+    color : white;
+}
+.footer .footer_menu {
+    height: 70px;
+    border-bottom: 1px solid white ;
+    line-height: 70px;    
+} 
+.footer .footer_menu ul {
+    width: 1280px;
+    margin: 0 auto;
+}
+.footer .footer_menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.footer .footer_info {
+    width: 1280px;
+    margin: 50px auto;
+}
+.footer .footer_info ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-style: normal;
+}
+
+.footer .footer_info address p {
+    display: inline-block;
+    margin-right: 20px;
+    font-style: normal;
+}
+/* .footer p {
+    width: 1280px;
+    text-align: center;
+} */
+
+.footer > p {
+    width: 1280px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}

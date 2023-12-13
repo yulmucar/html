@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration:none;
+    color: inherit;
+}
+body {
+    color: #333;
+}
+#wrap {
+    position: relative;
+}
+.header {
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.363);
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index:1;
+    color: white;
+}
+
+.header .inner {
+    width: 1280px;
+    height: 100%;
+    /* 100%가 없다면 텍스트들끼리에서만 가운데 정렬되기때문에 높이값이 정해져있다는걸 알려줘야해서 100%로 잡아줘야해 */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .inner nav ul {
+    display: flex;
+}
+.header .inner .util ul {
+    display: flex;
+}
+.main_visual {
+    width: 100vh;
+    position: relative;
+}
+.main_visual figure {
+    height: 100%;
+}
+.main_visual figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main_visual div { /* 메인비주얼 가운데로 정렬시키기 */
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left:0%;
+    transform: translate(0, -50%);
+    color: aqua;
+    font-size: 60px;
+    text-align: center;
+
+}
